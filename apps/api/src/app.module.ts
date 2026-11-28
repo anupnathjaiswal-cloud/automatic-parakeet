@@ -9,6 +9,8 @@ import { HealthModule } from './health/health.module.js';
 import { AuthModule } from './auth/auth.module.js';
 import { AdminModule } from './admin/admin.module.js';
 
+import { CategoriesModule } from './categories/categories.module.js';
+
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
 @Module({
@@ -16,6 +18,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     AppConfigModule,
     DatabaseModule,
     HealthModule,
+
     ObserveModule.forRoot({
       appKey: process.env.OBSERVE_APP_KEY!,
       appSecret: process.env.OBSERVE_APP_SECRET!,
@@ -23,6 +26,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     }),
     AuthModule,
     AdminModule,
+    CategoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
