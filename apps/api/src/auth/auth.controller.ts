@@ -119,4 +119,11 @@ export class AuthController {
   getProfile(@CurrentUser() user: AuthenticatedUser) {
     return user;
   }
+
+  // @UseGuards(JwtAuthGuard, RolesGuard)
+  // @Roles(UserRole.ADMIN)
+  // @Get('admin/dashboard')
+  // getDashboard() {
+  //   return { message: 'Welcome Admin!' };
+  // }
 }
